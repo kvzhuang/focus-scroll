@@ -7,28 +7,28 @@
  * @author   Kevin Zhuang
  * @created  2013/04/16
  */
-YUI.add("focusscroll", function (Y) {
+YUI.add("focus-scroll", function (Y) {
 
-	var MODULE_ID = "FocusScrollPlugin";
+    var MODULE_ID = "FocusScrollPlugin";
 
-	function FocusScrollPlugin(config) {
-		this._init(config);
-	}
+    function FocusScrollPlugin(config) {
+        this._init(config);
+    }
 
-	FocusScrollPlugin.NS = "focusscroll";
+    FocusScrollPlugin.NS = "focus-scroll";
 
-	FocusScrollPlugin.prototype = {
-		_init: function (config) {
-			Y.log("_init() is executed.", "info", MODULE_ID);
-			var node = config.host,
-				focusable = "a";
-	        Y.delegate("focus", this._handleFocus, node, focusable, node);
+    FocusScrollPlugin.prototype = {
+        _init: function (config) {
+            Y.log("_init() is executed.", "info", MODULE_ID);
+            var node = config.host,
+                focusable = "a";
+            Y.delegate("focus", this._handleFocus, node, focusable, node);
 
-	        // Focus the first element.
-	        node.one(focusable).focus();
-		},
-		_handleFocus: function (e) {
-			Y.log("_handleFocus() is executed.", "info", MODULE_ID);
+            // Focus the first element.
+            node.one(focusable).focus();
+        },
+        _handleFocus: function (e) {
+            Y.log("_handleFocus() is executed.", "info", MODULE_ID);
             var anim,
                 container,
                 isDoc,
@@ -83,12 +83,12 @@ YUI.add("focusscroll", function (Y) {
                 anim.run();
             }
         }
-	};
+    };
 
-	Y.FocusScrollPlugin = FocusScrollPlugin;
+    Y.FocusScrollPlugin = FocusScrollPlugin;
 },
-	"0.0.1", {
-		"group"	: "mui",
-		"js"	: "focus-scroll/focus-scroll.js",
-		"requires": ["anim", "event-resize", "event-focus", "event-delegate", "node"]
-	});
+    "0.0.1", {
+        "group"    : "mui",
+        "js"    : "focus-scroll/focus-scroll.js",
+        "requires": ["anim", "event-resize", "event-focus", "event-delegate", "node"]
+    });
