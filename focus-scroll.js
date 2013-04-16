@@ -7,7 +7,7 @@
  * @author   Kevin Zhuang
  * @created  2013/04/16
  */
-YUI.add("focusscroll", function (Y) {
+YUI.add("focus-scroll", function (Y) {
 
 	var MODULE_ID = "FocusScrollPlugin";
 
@@ -15,7 +15,7 @@ YUI.add("focusscroll", function (Y) {
 		this._init(config);
 	}
 
-	FocusScrollPlugin.NS = "focusscroll";
+	FocusScrollPlugin.NS = "focus-scroll";
 
 	FocusScrollPlugin.prototype = {
 		_init: function (config) {
