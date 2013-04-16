@@ -20,12 +20,11 @@ YUI.add("focus-scroll", function (Y) {
 	FocusScrollPlugin.prototype = {
 		_init: function (config) {
 			Y.log("_init() is executed.", "info", MODULE_ID);
-			var node = config.node,
+			var node = config.host,
 				focusable = "a";
 	        Y.delegate("focus", this._handleFocus, node, focusable, node);
-
 	        // Focus the first element.
-	        Y.one(focusable).focus();
+	        node.one(focusable).focus();
 		},
 		_handleFocus: function (e) {
 			Y.log("_handleFocus() is executed.", "info", MODULE_ID);
@@ -40,7 +39,6 @@ YUI.add("focus-scroll", function (Y) {
                 scrollHeight, // Current scroll height.
                 scrollTop,    // Target scrollTop value.
                 viewHeight;
-
             node = e.currentTarget;
             container = this;
             isDoc = (container._node === document || container._node === window || container._node === document.body);
