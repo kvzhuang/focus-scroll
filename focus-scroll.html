@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="josephj">
+<meta name="author" content="Kevin Zhuang">
+<meta name="created" content="2013-04-10">
+<title>Focus Auto Scroll</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.7.2/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.7.2/build/cssfonts/fonts-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js"></script>
+<script type="text/javascript" src="focus-scroll.js"></script>
+<style type="text/css">
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.8);
+}
+body {
+    text-align: center;
+}
+h1 {
+    font-size: 26px;
+    font-family: Verdana;
+    font-weight: bold;
+    margin: 10px 0;
+}
+#foo {
+    border: solid 5px green;
+    width: 800px;
+    height: 450px;
+    margin: 0 auto;
+    text-align: left;
+}
+#foo ul {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    zoom: 1;
+}
+#foo ul:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+#foo li {
+    background: pink;
+    float: left;
+    height: 150px;
+    width: 200px;
+}
+#foo li a {
+    display: block;
+    position: relative;
+    height: 148px;
+    width: 198px;
+    border: solid 1px #000;
+}
+#foo li a:focus {
+    background: red;
+    outline-color: red;
+    outline-style:outset;
+}
+</style>
+</head>
+<body class="yui3-skin-sam">
+    <h1>Focus Auto Scroll</h1>
+    <p>Tab or Shift-tab</p>
+    <div id="foo">
+        <ul>
+            <li>
+                <a href="javascript:alert(0);">Link #0</a>
+            </li>
+            <li>
+                <a href="javascript:alert(1);">Link #1</a>
+            </li>
+            <li>
+                <a href="javascript:alert(2);">Link #2</a>
+            </li>
+            <li>
+                <a href="javascript:alert(3);">Link #3</a>
+            </li>
+            <li>
+                <a href="javascript:alert(4);">Link #4</a>
+            </li>
+            <li>
+                <a href="javascript:alert(5);">Link #5</a>
+            </li>
+            <li>
+                <a href="javascript:alert(6);">Link #6</a>
+            </li>
+            <li>
+                <a href="javascript:alert(7);">Link #7</a>
+            </li>
+            <li>
+                <a href="javascript:alert(8);">Link #8</a>
+            </li>
+            <li>
+                <a href="javascript:alert(9);">Link #9</a>
+            </li>
+            <li>
+                <a href="javascript:alert(10);">Link #10</a>
+            </li>
+            <li>
+                <a href="javascript:alert(11);">Link #11</a>
+            </li>
+            <li>
+                <a href="javascript:alert(12);">Link #12</a>
+            </li>
+            <li>
+                <a href="javascript:alert(13);">Link #13</a>
+            </li>
+            <li>
+                <a href="javascript:alert(14);">Link #14</a>
+            </li>
+            <li>
+                <a href="javascript:alert(15);">Link #15</a>
+            </li>
+            <li>
+                <a href="javascript:alert(16);">Link #16</a>
+            </li>
+            <li>
+                <a href="javascript:alert(17);">Link #17</a>
+            </li>
+            <li>
+                <a href="javascript:alert(18);">Link #18</a>
+            </li>
+            <li>
+                <a href="javascript:alert(19);">Link #19</a>
+            </li>
+            <li>
+                <a href="javascript:alert(20);">Link #20</a>
+            </li>
+            <li>
+                <a href="javascript:alert(21);">Link #21</a>
+            </li>
+            <li>
+                <a href="javascript:alert(22);">Link #22</a>
+            </li>
+            <li>
+                <a href="javascript:alert(23);">Link #23</a>
+            </li>
+            <li>
+                <a href="javascript:alert(24);">Link #24</a>
+            </li>
+            <li>
+                <a href="javascript:alert(25);">Link #25</a>
+            </li>
+            <li>
+                <a href="javascript:alert(26);">Link #26</a>
+            </li>
+            <li>
+                <a href="javascript:alert(27);">Link #27</a>
+            </li>
+            <li>
+                <a href="javascript:alert(28);">Link #28</a>
+            </li>
+            <li>
+                <a href="javascript:alert(29);">Link #29</a>
+            </li>
+            <li>
+                <a href="javascript:alert(30);">Link #30</a>
+            </li>
+            <li>
+                <a href="javascript:alert(31);">Link #31</a>
+            </li>
+            <li>
+                <a href="javascript:alert(32);">Link #32</a>
+            </li>
+            <li>
+                <a href="javascript:alert(33);">Link #33</a>
+            </li>
+            <li>
+                <a href="javascript:alert(34);">Link #34</a>
+            </li>
+            <li>
+                <a href="javascript:alert(35);">Link #35</a>
+            </li>
+            <li>
+                <a href="javascript:alert(36);">Link #36</a>
+            </li>
+            <li>
+                <a href="javascript:alert(37);">Link #37</a>
+            </li>
+            <li>
+                <a href="javascript:alert(38);">Link #38</a>
+            </li>
+            <li>
+                <a href="javascript:alert(39);">Link #39</a>
+            </li>
+            <li>
+                <a href="javascript:alert(40);">Link #40</a>
+            </li>
+            <li>
+                <a href="javascript:alert(41);">Link #41</a>
+            </li>
+            <li>
+                <a href="javascript:alert(42);">Link #42</a>
+            </li>
+            <li>
+                <a href="javascript:alert(43);">Link #43</a>
+            </li>
+            <li>
+                <a href="javascript:alert(44);">Link #44</a>
+            </li>
+            <li>
+                <a href="javascript:alert(45);">Link #45</a>
+            </li>
+            <li>
+                <a href="javascript:alert(46);">Link #46</a>
+            </li>
+            <li>
+                <a href="javascript:alert(47);">Link #47</a>
+            </li>
+            <li>
+                <a href="javascript:alert(48);">Link #48</a>
+            </li>
+            <li>
+                <a href="javascript:alert(49);">Link #49</a>
+            </li>
+            <li>
+                <a href="javascript:alert(50);">Link #50</a>
+            </li>
+            <li>
+                <a href="javascript:alert(51);">Link #51</a>
+            </li>
+            <li>
+                <a href="javascript:alert(52);">Link #52</a>
+            </li>
+            <li>
+                <a href="javascript:alert(53);">Link #53</a>
+            </li>
+            <li>
+                <a href="javascript:alert(54);">Link #54</a>
+            </li>
+            <li>
+                <a href="javascript:alert(55);">Link #55</a>
+            </li>
+            <li>
+                <a href="javascript:alert(56);">Link #56</a>
+            </li>
+            <li>
+                <a href="javascript:alert(57);">Link #57</a>
+            </li>
+            <li>
+                <a href="javascript:alert(58);">Link #58</a>
+            </li>
+            <li>
+                <a href="javascript:alert(59);">Link #59</a>
+            </li>
+            <li>
+                <a href="javascript:alert(60);">Link #60</a>
+            </li>
+            <li>
+                <a href="javascript:alert(61);">Link #61</a>
+            </li>
+            <li>
+                <a href="javascript:alert(62);">Link #62</a>
+            </li>
+            <li>
+                <a href="javascript:alert(63);">Link #63</a>
+            </li>
+            <li>
+                <a href="javascript:alert(64);">Link #64</a>
+            </li>
+            <li>
+                <a href="javascript:alert(65);">Link #65</a>
+            </li>
+            <li>
+                <a href="javascript:alert(66);">Link #66</a>
+            </li>
+            <li>
+                <a href="javascript:alert(67);">Link #67</a>
+            </li>
+            <li>
+                <a href="javascript:alert(68);">Link #68</a>
+            </li>
+            <li>
+                <a href="javascript:alert(69);">Link #69</a>
+            </li>
+            <li>
+                <a href="javascript:alert(70);">Link #70</a>
+            </li>
+            <li>
+                <a href="javascript:alert(71);">Link #71</a>
+            </li>
+        </ul>
+    </div>
+    <div id="hint"></div>
+    <script>
+    
+    YUI().use("focusscroll", function (Y) {
+        Y.one("#foo ul").plug(Y.FocusScrollPlugin);
+    });
+
+    </script>
+</body>
+</html>
+
