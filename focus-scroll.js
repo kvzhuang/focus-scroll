@@ -45,8 +45,12 @@ YUI.add("focus-scroll", function (Y) {
             nodeY = (isDoc) ? node.get("region").top : node.get("offsetTop") - container.get("region").top;
             nodeHeight = node.get("offsetHeight");
             scrollY = (isDoc) ? node.get("docScrollY") : container.get("scrollTop");
+            Y.log("scrollY = " + scrollY);
             viewHeight = (isDoc) ? node.get("winHeight") : container.get("offsetHeight");
             scrollHeight = viewHeight + scrollY;
+            Y.log("_handleFocus() - Current position " +
+                 "(nodeBottomY = " + (nodeY + nodeHeight) + ", " +
+                 "scrollHeight = " + scrollHeight + ").");
 
             // Scroll down when focused node exceeds viewport.
             if (nodeY + nodeHeight >= scrollHeight) {
