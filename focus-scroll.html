@@ -288,7 +288,8 @@ h1 {
     <script>
 
     YUI().use("focus-scroll", function (Y) {
-        Y.one("#foo ul").callback = function (){//callback function};
+        Y.one("#foo ul").offset = 10;
+        Y.one("#foo ul").callback = function (){ //callback function};
         Y.one("#foo ul").plug(Y.FocusScrollPlugin);
     });
 
