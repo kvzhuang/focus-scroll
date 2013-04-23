@@ -20,21 +20,21 @@ YUI.add("focus-scroll", function (Y) {
     FocusScrollPlugin.prototype = {
         _init: function (config) {
             Y.log("_init() is executed.", "info", MODULE_ID);
-            var callback = config.host.callback || null,
+            var offset   = config.host.offset || 0,
+                callback = config.host.callback || null,
                 node = config.host,
                 focusable = "a";
-            Y.delegate("focus", this._handleFocus, node, focusable, node, callback);
+            Y.delegate("focus", this._handleFocus, node, focusable, node, callback, offset);
             // x
             // Focus the first element.
             node.one(focusable).focus();
         },
-        _handleFocus: function (e, callback) {
+        _handleFocus: function (e, callback, offset) {
             Y.log("_handleFocus() is executed.", "info", MODULE_ID);
             var anim,
                 container,
                 isDoc,
                 node,
-                offset = 100, // offset to scroll
                 nodeY,        // node offsetY position.
                 nodeHeight,   // Height of each node. (MUST BE THE SAME)
                 rowTotal,     // Available amount of rows within the viewport.
@@ -61,10 +61,10 @@ YUI.add("focus-scroll", function (Y) {
                      "(nodeBottomY = " + (nodeY + nodeHeight) + ", " +
                      "scrollHeight = " + scrollHeight + ").");
 
-                scrollTop = nodeY - 15;
+                scrollTop = nodeY - offset;
 
             // Scroll up.
-            } else if (nodeY < scrollY + offset) {
+            } else if (nodeY < scrollY ) {
                 Y.log("_handleFocus() - Scroll up " +
                      "(nodeTopY = " + nodeY + ", " +
                      "scrollY = " + scrollY + ").");
@@ -72,7 +72,7 @@ YUI.add("focus-scroll", function (Y) {
                 // Caculates target scrollTop.
                 rowTotal = Math.floor(viewHeight / nodeHeight);
                 scrollTop = nodeY - (rowTotal - 1) * nodeHeight;
-                scrollTop = (scrollTop <= 0) ? -10 : scrollTop;
+                scrollTop = (scrollTop <= 0) ? - offset : scrollTop;
             }
 
             // Makes scrolling while scrollTop isn't undefined.
