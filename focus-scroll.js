@@ -24,6 +24,7 @@ YUI.add("focus-scroll", function (Y) {
                 node = config.host,
                 focusable = "a";
             Y.delegate("focus", this._handleFocus, node, focusable, node, callback);
+            // x
             // Focus the first element.
             node.one(focusable).focus();
         },
@@ -60,7 +61,7 @@ YUI.add("focus-scroll", function (Y) {
                      "(nodeBottomY = " + (nodeY + nodeHeight) + ", " +
                      "scrollHeight = " + scrollHeight + ").");
 
-                scrollTop = nodeY;
+                scrollTop = nodeY - 15;
 
             // Scroll up.
             } else if (nodeY < scrollY + offset) {
@@ -71,7 +72,7 @@ YUI.add("focus-scroll", function (Y) {
                 // Caculates target scrollTop.
                 rowTotal = Math.floor(viewHeight / nodeHeight);
                 scrollTop = nodeY - (rowTotal - 1) * nodeHeight;
-                scrollTop = (scrollTop <= 0) ? 0 : scrollTop;
+                scrollTop = (scrollTop <= 0) ? -10 : scrollTop;
             }
 
             // Makes scrolling while scrollTop isn't undefined.
